@@ -56,7 +56,7 @@
                 items:2
             },
             992:{
-                items:3
+                items:2
             }
         }
     });
@@ -101,3 +101,12 @@ function hideOverlay(e) {
 
 overlay.addEventListener('click', hideOverlay);
 
+function enviarWhatsApp(mensaje) {
+     
+    const telefono = "+51956386338"; // Tu número con código de país
+
+    const mensajeTexto = `Hola, vengo desde la web de Clinica Automotriz MV y me gustaria agendar una cita. ${mensaje?mensaje:''}`;
+    const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensajeTexto)}`;
+
+    window.open(url, '_blank');
+}
